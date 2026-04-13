@@ -1,0 +1,82 @@
+# Dependencias del Módulo 5: Tipado Estático y Calidad de Código
+
+# ============================================================================
+# VERIFICADORES DE TIPOS
+# ============================================================================
+
+# mypy - Verificador de tipos estático oficial
+mypy>=1.8.0
+
+# pyright - Verificador de tipos de Microsoft (opcional, más rápido)
+# pyright>=1.1.350
+
+
+# ============================================================================
+# FORMATEADORES
+# ============================================================================
+
+# Black - The Uncompromising Code Formatter
+black>=24.0.0
+
+# isort - Ordenar imports automáticamente
+isort>=5.13.0
+
+
+# ============================================================================
+# LINTERS
+# ============================================================================
+
+# Ruff - Linter ultrarrápido (reemplaza flake8, pylint, isort y más)
+ruff>=0.2.0
+
+
+# ============================================================================
+# PRE-COMMIT
+# ============================================================================
+
+# pre-commit - Framework para git pre-commit hooks
+# Instalar separadamente: pip install pre-commit
+pre-commit>=3.6.0
+
+
+# ============================================================================
+# ANÁLISIS ADICIONAL (OPCIONAL)
+# ============================================================================
+
+# pylint - Análisis exhaustivo de código (más estricto)
+# pylint>=3.0.0
+
+# bandit - Análisis de seguridad
+# bandit>=1.7.6
+
+# coverage - Medición de cobertura de tests
+# coverage>=7.4.0
+
+
+# ============================================================================
+# TIPO STUBS (para librerías sin tipos incluidos)
+# ============================================================================
+
+# Types para librerías comunes
+types-requests>=2.31.0
+types-PyYAML>=6.0.12
+
+
+# ============================================================================
+# INSTRUCCIONES DE INSTALACIÓN
+# ============================================================================
+
+# Instalación básica:
+# pip install -r requirements.txt
+
+# Instalar pre-commit hooks:
+# pre-commit install
+
+# Ejecutar verificaciones:
+# black --check .
+# ruff check .
+# mypy .
+
+# Formatear código:
+# black .
+# ruff check --fix .
