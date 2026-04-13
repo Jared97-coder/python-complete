@@ -481,34 +481,6 @@ if __name__ == "__main__":
 
 ---
 
-## Criterios de Evaluación
-
-### Ejercicio 1: Ingesta CSV (25 puntos)
-- [ ] Modelo Pydantic con validación (5 pts)
-- [ ] Lectura CSV con DictReader (5 pts)
-- [ ] Manejo de errores de validación (5 pts)
-- [ ] Logging apropiado (DEBUG/INFO/ERROR) (5 pts)
-- [ ] Separación de válidas/inválidas (5 pts)
-
-### Ejercicio 2: Métricas (25 puntos)
-- [ ] Cálculo de totales y promedios (5 pts)
-- [ ] Agrupación por producto/región/vendedor (10 pts)
-- [ ] Top N productos (5 pts)
-- [ ] Logging en cada cálculo (5 pts)
-
-### Ejercicio 3: Exportación JSON (20 puntos)
-- [ ] Estructura JSON completa (10 pts)
-- [ ] Serialización correcta de tipos (5 pts)
-- [ ] Metadata incluida (5 pts)
-
-### Ejercicio 4: Sistema Completo (30 puntos)
-- [ ] Configuración logging multinivel (10 pts)
-- [ ] Integración de todos los componentes (10 pts)
-- [ ] Manejo de excepciones (5 pts)
-- [ ] Logs en archivos separados (5 pts)
-
----
-
 ## Entrega
 
 **Archivos requeridos:**
@@ -534,13 +506,3 @@ INFO     - Lectura completada: 9 válidas, 1 con errores
 📋 Logs detallados: logs/ventas_detallado.log
 ⚠️  Logs de errores: logs/ventas_errores.log
 ```
-
----
-
-## Bonus (Opcional)
-
-1. **Gráficos** ⭐: Generar gráficos con matplotlib
-2. **Dashboard HTML** ⭐⭐: Exportar HTML con resumen visual
-3. **Streaming** ⭐⭐⭐: Procesar CSV muy grandes en chunks
-4. **Alertas** ⭐⭐: Enviar email si errores > umbral
-5. **CLI** ⭐⭐⭐: Interfaz de línea de comandos con argparse

@@ -1,0 +1,152 @@
+# Módulo 7: HTTP y Consumo de APIs
+# Dependencias para trabajar con HTTP/REST APIs
+
+# ============================================================================
+# Clientes HTTP Core
+# ============================================================================
+
+# requests - El estándar de facto para HTTP en Python
+# Simple, elegante, ampliamente usado
+requests>=2.31.0
+
+# httpx - Cliente HTTP moderno con soporte HTTP/2 y API async/sync
+# Sucesor espiritual de requests
+httpx>=0.27.0
+
+# aiohttp - Cliente y servidor HTTP asíncrono
+# Para alto rendimiento con asyncio
+aiohttp>=3.9.0
+
+
+# ============================================================================
+# Resiliencia y Manejo de Errores
+# ============================================================================
+
+# tenacity - Reintentos elegantes con múltiples estrategias
+# Backoff exponencial, jitter, callbacks
+tenacity>=8.2.0
+
+# urllib3 - Biblioteca HTTP de bajo nivel (usada por requests)
+# Incluye Retry y PoolManager
+urllib3>=2.0.0
+
+# backoff - Decoradores simples para reintentos con backoff
+backoff>=2.2.0
+
+
+# ============================================================================
+# Utilidades
+# ============================================================================
+
+# python-dotenv - Carga variables de entorno desde .env
+python-dotenv>=1.0.0
+
+# pydantic - Validación de datos y settings management
+pydantic>=2.0.0
+
+# tqdm - Progress bars para descargas y procesos largos
+tqdm>=4.66.0
+
+# rich - Output enriquecido en terminal
+rich>=13.7.0
+
+
+# ============================================================================
+# Testing y Mocking
+# ============================================================================
+
+# responses - Mock para requests (fácil y ligero)
+responses>=0.24.0
+
+# aioresponses - Mock para aiohttp
+aioresponses>=0.7.6
+
+# pytest - Framework de testing
+pytest>=8.0.0
+
+# pytest-asyncio - Soporte para tests asíncronos
+pytest-asyncio>=0.23.0
+
+# httpx testing - Incluido en httpx, no requiere instalación adicional
+
+
+# ============================================================================
+# Autenticación (Opcional)
+# ============================================================================
+
+# requests-oauthlib - OAuth 1.0 y 2.0 para requests
+requests-oauthlib>=1.3.1
+
+# authlib - Biblioteca completa de autenticación
+# OAuth 1.0, OAuth 2.0, OpenID Connect
+authlib>=1.3.0
+
+
+# ============================================================================
+# Monitoreo y Logging (Opcional)
+# ============================================================================
+
+# requests-toolbelt - Utilidades extras para requests
+# Multipart encoder, seguimiento de uploads, etc.
+requests-toolbelt>=1.0.0
+
+# http-client - Cliente HTTP con logging integrado
+# (Opcional, alternativa con logging detallado)
+
+
+# ============================================================================
+# Performance y Caching (Opcional)
+# ============================================================================
+
+# requests-cache - Cache de respuestas HTTP
+# SQLite, Redis, MongoDB backends
+requests-cache>=1.1.0
+
+# cachetools - Estructuras de cache (LRU, TTL, etc.)
+cachetools>=5.3.0
+
+
+# ============================================================================
+# Compresión y Serialización
+# ============================================================================
+
+# orjson - JSON rápido (10x más rápido que json estándar)
+orjson>=3.9.0
+
+# msgpack - Serialización binaria eficiente
+msgpack>=1.0.7
+
+
+# ============================================================================
+# Extras para APIs Específicas
+# ============================================================================
+
+# certifi - Certificados SSL actualizados
+certifi>=2023.11.17
+
+# charset-normalizer - Detección de encoding
+charset-normalizer>=3.3.0
+
+# idna - Soporte para dominios internacionalizados
+idna>=3.6
+
+
+# ============================================================================
+# Notas de Instalación
+# ============================================================================
+
+# Instalación básica (solo lo esencial):
+# pip install requests httpx aiohttp tenacity tqdm pydantic
+
+# Instalación completa (todas las dependencias):
+# pip install -r requirements.txt
+
+# Para desarrollo/testing:
+# pip install -r requirements.txt
+# pip install pytest pytest-asyncio responses aioresponses
+
+# Para usar HTTP/2 con httpx:
+# pip install httpx[http2]
+
+# Para usar brotli compression:
+# pip install httpx[brotli]
