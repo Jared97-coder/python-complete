@@ -1,0 +1,10 @@
+# Dependencias del Módulo 4: Objetos y Modelos de Datos
+
+# Pydantic v2 - Validación de datos y serialización
+pydantic>=2.0.0
+
+# Pydantic settings para gestión de configuración (opcional)
+pydantic-settings>=2.0.0
+
+# Attrs - Alternativa a dataclasses con más funcionalidades
+attrs>=23.0.0
