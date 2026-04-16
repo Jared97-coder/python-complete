@@ -1,0 +1,383 @@
+# ================================================================
+# MÓDULO 10: PRUEBAS Y TDD - DEPENDENCIAS
+# ================================================================
+# Instalación:
+#   pip install -r requirements.txt
+# ================================================================
+
+# ----------------------------------------------------------------
+# CORE TESTING FRAMEWORK
+# ----------------------------------------------------------------
+
+# pytest: Framework de testing moderno y potente
+# - Sintaxis simple con assertions nativos
+# - Fixtures flexibles y reutilizables
+# - Parametrización de tests
+# - Plugins extensivos
+pytest>=7.4.3
+
+# pytest-asyncio: Soporte para testing de código async/await
+# - Tests de funciones async
+# - Fixtures async
+pytest-asyncio>=0.21.1
+
+# pytest-timeout: Timeout automático para tests
+# - Prevenir tests que se cuelgan
+# - Configurar timeout por test o global
+pytest-timeout>=2.2.0
+
+# pytest-xdist: Ejecución paralela de tests
+# - Ejecutar tests en múltiples CPUs
+# - Acelerar suite de tests
+# Uso: pytest -n auto
+pytest-xdist>=3.5.0
+
+# ----------------------------------------------------------------
+# MOCKING Y TEST DOUBLES
+# ----------------------------------------------------------------
+
+# pytest-mock: Wrapper de unittest.mock para pytest
+# - Fixture 'mocker' integrada
+# - Cleanup automático de mocks
+# - Mejor integración con pytest
+pytest-mock>=3.12.0
+
+# responses: Mock de requests HTTP
+# - Simular APIs sin hacer requests reales
+# - Útil para tests de integración
+responses>=0.24.0
+
+# faker: Generación de datos fake realistas
+# - Nombres, emails, direcciones, etc.
+# - Útil para fixtures y datos de prueba
+faker>=21.0.0
+
+# freezegun: Mock de datetime
+# - Congelar tiempo en tests
+# - Testing de funcionalidad temporal
+freezegun>=1.4.0
+
+# ----------------------------------------------------------------
+# PROPERTY-BASED TESTING
+# ----------------------------------------------------------------
+
+# hypothesis: Property-based testing framework
+# - Generación automática de casos de test
+# - Shrinking de fallos
+# - Estrategias para tipos de datos
+hypothesis>=6.92.0
+
+# hypothesis[numpy]: Soporte para arrays NumPy (opcional)
+# hypothesis[django]: Soporte para modelos Django (opcional)
+# hypothesis[pandas]: Soporte para DataFrames (opcional)
+
+# ----------------------------------------------------------------
+# COBERTURA DE CÓDIGO
+# ----------------------------------------------------------------
+
+# pytest-cov: Plugin de cobertura para pytest
+# - Wrapper de coverage.py
+# - Reportes HTML, XML, terminal
+# - Integración con CI/CD
+pytest-cov>=4.1.0
+
+# coverage: Librería base de cobertura
+# - Análisis de líneas ejecutadas
+# - Branch coverage
+# - Reportes detallados
+coverage[toml]>=7.4.0
+
+# ----------------------------------------------------------------
+# CALIDAD DE CÓDIGO
+# ----------------------------------------------------------------
+
+# flake8: Linter de Python (PEP 8, errores, complejidad)
+# - Verificar estilo de código
+# - Detectar code smells
+flake8>=7.0.0
+
+# black: Formatter automático de código
+# - Formateo consistente
+# - Integración con pre-commit
+black>=23.12.0
+
+# mypy: Type checker estático
+# - Verificar type hints
+# - Detectar errores de tipos
+mypy>=1.8.0
+
+# pylint: Linter completo de Python
+# - Análisis de código profundo
+# - Métricas de complejidad
+pylint>=3.0.3
+
+# ----------------------------------------------------------------
+# FIXTURES Y TEST DATA
+# ----------------------------------------------------------------
+
+# factory-boy: Factories para crear objetos de test
+# - Alternativa a fixtures para datos complejos
+# - Integración con SQLAlchemy, Django, etc.
+factory-boy>=3.3.0
+
+# ----------------------------------------------------------------
+# TESTING DE APIS
+# ----------------------------------------------------------------
+
+# httpx: Cliente HTTP async/sync moderno
+# - Soporte para async/await
+# - Compatible con requests
+httpx>=0.26.0
+
+# ----------------------------------------------------------------
+# TESTING DE BASES DE DATOS
+# ----------------------------------------------------------------
+
+# pytest-postgresql: Fixtures para PostgreSQL
+# - DB temporal para tests
+# - Cleanup automático
+pytest-postgresql>=5.0.0
+
+# pytest-mongodb: Fixtures para MongoDB
+# - DB temporal para tests
+pytest-mongodb>=3.1.0
+
+# ----------------------------------------------------------------
+# REPORTES Y VISUALIZACIÓN
+# ----------------------------------------------------------------
+
+# pytest-html: Reportes HTML de tests
+# - Reportes visuales
+# - Screenshots de fallos
+pytest-html>=4.1.1
+
+# pytest-json-report: Reportes JSON de tests
+# - Machine-readable results
+# - Integración con herramientas
+pytest-json-report>=1.5.0
+
+# pytest-benchmark: Benchmarking de performance
+# - Medir tiempo de ejecución
+# - Comparar performance entre commits
+pytest-benchmark>=4.0.0
+
+# ----------------------------------------------------------------
+# CI/CD Y AUTOMATION
+# ----------------------------------------------------------------
+
+# tox: Automatización de testing en múltiples entornos
+# - Testing en Python 3.10, 3.11, 3.12
+# - Múltiples configuraciones
+tox>=4.11.4
+
+# pre-commit: Git hooks para ejecutar checks antes de commit
+# - Ejecutar tests automáticamente
+# - Formateo, linting, etc.
+pre-commit>=3.6.0
+
+# ----------------------------------------------------------------
+# UTILIDADES
+# ----------------------------------------------------------------
+
+# pytest-watch: Auto-rerun tests al cambiar archivos
+# - Desarrollo continuo
+# Usage: ptw
+pytest-watch>=4.2.0
+
+# pytest-instafail: Mostrar fallos instantáneamente
+# - No esperar fin de suite
+pytest-instafail>=0.5.0
+
+# pytest-sugar: Output mejorado de pytest
+# - Progress bar
+# - Colores mejorados
+pytest-sugar>=0.9.7
+
+# ----------------------------------------------------------------
+# DEPENDENCIAS OPCIONALES (según proyecto)
+# ----------------------------------------------------------------
+
+# Para testing de Django:
+# pytest-django>=4.7.0
+
+# Para testing de Flask:
+# pytest-flask>=1.3.0
+
+# Para testing de FastAPI (ya instalado en Módulo 9):
+# httpx>=0.26.0
+
+# Para testing de Selenium/WebDriver:
+# selenium>=4.16.0
+# pytest-selenium>=4.1.0
+
+# Para testing de bases de datos SQL:
+# sqlalchemy>=2.0.25  # Ya instalado en Módulo 8
+# alembic>=1.13.1     # Ya instalado en Módulo 8
+
+# ================================================================
+# CONFIGURACIÓN RECOMENDADA
+# ================================================================
+# 
+# pytest.ini o pyproject.toml:
+# -------------------------------------------------
+# [tool.pytest.ini_options]
+# testpaths = ["tests"]
+# python_files = ["test_*.py", "*_test.py"]
+# python_classes = ["Test*"]
+# python_functions = ["test_*"]
+# addopts = """
+#     -v
+#     --strict-markers
+#     --tb=short
+#     --cov=src
+#     --cov-report=html
+#     --cov-report=term-missing
+#     --cov-fail-under=80
+# """
+# markers = [
+#     "slow: marks tests as slow",
+#     "integration: marks tests as integration tests",
+#     "unit: marks tests as unit tests",
+#     "e2e: marks tests as end-to-end tests",
+# ]
+#
+# [tool.coverage.run]
+# source = ["src"]
+# omit = [
+#     "*/tests/*",
+#     "*/venv/*",
+#     "*/__pycache__/*",
+# ]
+#
+# [tool.coverage.report]
+# precision = 2
+# exclude_lines = [
+#     "pragma: no cover",
+#     "def __repr__",
+#     "raise AssertionError",
+#     "raise NotImplementedError",
+#     "if __name__ == .__main__.:",
+#     "if TYPE_CHECKING:",
+# ]
+# -------------------------------------------------
+#
+# .pre-commit-config.yaml:
+# -------------------------------------------------
+# repos:
+#   - repo: https://github.com/psf/black
+#     rev: 23.12.0
+#     hooks:
+#       - id: black
+#   
+#   - repo: https://github.com/pycqa/flake8
+#     rev: 7.0.0
+#     hooks:
+#       - id: flake8
+#   
+#   - repo: local
+#     hooks:
+#       - id: pytest
+#         name: pytest
+#         entry: pytest
+#         language: system
+#         pass_filenames: false
+#         always_run: true
+# -------------------------------------------------
+#
+# GitHub Actions (.github/workflows/tests.yml):
+# -------------------------------------------------
+# name: Tests
+# on: [push, pull_request]
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         python-version: ["3.10", "3.11", "3.12"]
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-python@v5
+#         with:
+#           python-version: ${{ matrix.python-version }}
+#       - run: pip install -r requirements.txt
+#       - run: pytest --cov=src --cov-report=xml
+#       - uses: codecov/codecov-action@v3
+# -------------------------------------------------
+#
+# ================================================================
+# INSTALACIÓN POR GRUPOS
+# ================================================================
+#
+# Instalación básica (pytest + cobertura):
+#   pip install pytest pytest-cov
+#
+# Instalación completa:
+#   pip install -r requirements.txt
+#
+# Instalación para desarrollo:
+#   pip install -r requirements.txt
+#   pre-commit install
+#
+# ================================================================
+# COMANDOS ÚTILES
+# ================================================================
+#
+# Ejecutar todos los tests:
+#   pytest
+#
+# Con verbose:
+#   pytest -v
+#
+# Con verbose + stdout:
+#   pytest -v -s
+#
+# Solo tests rápidos (sin "slow"):
+#   pytest -m "not slow"
+#
+# Solo tests de integración:
+#   pytest -m integration
+#
+# Con cobertura:
+#   pytest --cov=src --cov-report=html
+#   # Abrir: htmlcov/index.html
+#
+# En paralelo (4 CPUs):
+#   pytest -n 4
+#
+# Auto (usar todos CPUs):
+#   pytest -n auto
+#
+# Detener en primer fallo:
+#   pytest -x
+#
+# Último fallo primero:
+#   pytest --lf
+#
+# Solo fallos:
+#   pytest --failed-first
+#
+# Con timeout (10s por test):
+#   pytest --timeout=10
+#
+# Watch mode (re-run al cambiar):
+#   ptw
+#
+# ================================================================
+# TROUBLESHOOTING
+# ================================================================
+#
+# "ModuleNotFoundError: No module named 'pytest'":
+#   → pip install pytest
+#
+# "fixture 'mocker' not found":
+#   → pip install pytest-mock
+#
+# Tests lentos:
+#   → pytest -n auto  (ejecutar en paralelo)
+#   → pytest --durations=10  (ver 10 tests más lentos)
+#
+# Cobertura baja:
+#   → pytest --cov=src --cov-report=term-missing
+#   → Ver líneas faltantes y agregar tests
+#
+# ================================================================
