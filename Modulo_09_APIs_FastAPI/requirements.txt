@@ -1,0 +1,172 @@
+# ========================================
+# Módulo 9 - APIs Web con FastAPI
+# ========================================
+# Dependencias para construir APIs REST modernas
+# con FastAPI, autenticación JWT, y testing
+
+# ----------------------------------------
+# Core Framework
+# ----------------------------------------
+
+# FastAPI - Framework web moderno y de alto rendimiento
+fastapi>=0.109.0
+
+# Uvicorn - ASGI server (con extras para producción)
+uvicorn[standard]>=0.27.0
+# Incluye: uvloop, httptools, websockets, python-dotenv
+
+# Pydantic - Validación de datos con type hints
+pydantic>=2.5.0
+pydantic[email]>=2.5.0  # Validación de emails
+pydantic-settings>=2.1.0  # Configuración desde .env
+
+# ----------------------------------------
+# Base de Datos (Integración con Módulo 8)
+# ----------------------------------------
+
+# SQLAlchemy - ORM para SQL databases
+sqlalchemy>=2.0.25
+
+# Alembic - Migraciones de base de datos
+alembic>=1.13.1
+
+# Drivers de base de datos
+psycopg2-binary>=2.9.9  # PostgreSQL (producción)
+# Para SQL Server en Windows:
+# pyodbc>=5.0.1  # Descomentar si usas SQL Server
+
+# ----------------------------------------
+# Autenticación y Seguridad
+# ----------------------------------------
+
+# PyJWT (python-jose) - Crear y validar JWT tokens
+python-jose[cryptography]>=3.3.0
+
+# Passlib - Hash de passwords
+passlib[bcrypt]>=1.7.4
+
+# Python-multipart - Para formularios y uploads
+python-multipart>=0.0.6
+
+# ----------------------------------------
+# Testing
+# ----------------------------------------
+
+# Pytest - Framework de testing
+pytest>=7.4.3
+pytest-asyncio>=0.21.1  # Testing async
+pytest-cov>=4.1.0  # Coverage reports
+
+# HTTPX - Cliente HTTP async (para TestClient)
+httpx>=0.26.0
+
+# Faker - Datos de prueba realistas
+faker>=22.0.0
+
+# ----------------------------------------
+# Utilidades
+# ----------------------------------------
+
+# Python-dotenv - Cargar variables de .env
+python-dotenv>=1.0.0
+
+# ----------------------------------------
+# Desarrollo (Opcional)
+# ----------------------------------------
+
+# Black - Formateador de código
+# black>=23.12.1
+
+# Ruff - Linter rápido
+# ruff>=0.1.9
+
+# MyPy - Type checker
+# mypy>=1.8.0
+
+# ----------------------------------------
+# Extras (Opcional)
+# ----------------------------------------
+
+# Redis para caching
+# redis>=5.0.1
+
+# Celery para background tasks
+# celery>=5.3.4
+
+# APScheduler para tareas programadas
+# apscheduler>=3.10.4
+
+# Emails
+# fastapi-mail>=1.4.1
+
+# Rate limiting
+# slowapi>=0.1.9
+
+# ========================================
+# INSTALACIÓN
+# ========================================
+# 
+# Instalación básica:
+#   pip install -r requirements.txt
+#
+# Con desarrollo:
+#   pip install -r requirements.txt black ruff mypy
+#
+# Con extras:
+#   pip install -r requirements.txt redis celery
+#
+# ========================================
+
+# ========================================
+# VERIFICACIÓN
+# ========================================
+# 
+# Verificar instalación:
+#   python -c "import fastapi; print(fastapi.__version__)"
+#   python -c "import pydantic; print(pydantic.__version__)"
+#   python -c "import sqlalchemy; print(sqlalchemy.__version__)"
+#
+# Iniciar servidor de desarrollo:
+#   uvicorn main:app --reload
+#
+# Ver documentación interactiva:
+#   http://localhost:8000/docs
+#
+# ========================================
+
+# ========================================
+# NOTAS DE VERSIONES
+# ========================================
+#
+# FastAPI 0.109+:
+#   - Compatible con Pydantic V2
+#   - Mejoras en performance
+#   - Nuevos features de validación
+#
+# SQLAlchemy 2.0+:
+#   - Nueva API con Mapped types
+#   - Mejor integración async
+#   - Type hints mejorados
+#
+# Pydantic 2.5+:
+#   - Validación 5-50x más rápida
+#   - Mejores mensajes de error
+#   - Model serialization mejorado
+#
+# ========================================
+
+# ========================================
+# CONFIGURACIÓN RECOMENDADA
+# ========================================
+#
+# Python version: 3.10+
+# Recomendado: Python 3.11+ para mejor performance
+#
+# Variables de entorno (.env):
+#   DATABASE_URL=postgresql://user:pass@localhost/dbname
+#   SECRET_KEY=your-secret-key-min-32-chars
+#   ALGORITHM=HS256
+#   ACCESS_TOKEN_EXPIRE_MINUTES=30
+#   ENVIRONMENT=development
+#
+# ========================================
